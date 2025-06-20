@@ -45,7 +45,7 @@ export default function Page() {
   const [formData, setFormData] = useState({
     firstName: "",
     email: "",
-    newsletter: false,
+    newsletter: true,
     rgpd: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
