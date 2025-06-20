@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   // Parse incoming request body
   const { firstName, email, newsletter } = await req.json();
-  console.log("firstName, email, newsletter:", firstName, email, newsletter);
   // Validate required fields
   if (!email || !firstName) {
     return NextResponse.json(
@@ -48,7 +47,6 @@ export async function POST(req: Request) {
       headers,
       body: JSON.stringify(contactData),
     });
-    console.log("createRes:", createRes);
     const createJson = await createRes.json();
 
     if (createRes.ok) {

@@ -72,7 +72,6 @@ export default function Page() {
       alert("Veuillez accepter la politique de confidentialité");
       return;
     }
-    console.log("coucou");
 
     try {
       const token = await getCaptchaToken();
@@ -80,16 +79,27 @@ export default function Page() {
       if (res?.success) {
         setIsSubmitting(true);
         // Simulation d'envoi
-        const response = await fetch("/api/contact", {
+        const sendmail = await fetch("/api/sendmail", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         });
-        console.log("response:", response);
-        if (response?.status === 200) {
-          setIsSubmitted(true);
-          setIsSubmitting(false);
-          setErrMsg("");
+        if (sendmail?.status === 200) {
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          });
+          if (response?.status === 200) {
+            setIsSubmitted(true);
+            setIsSubmitting(false);
+            setErrMsg("");
+          } else {
+            setIsSubmitting(false);
+            setErrMsg(
+              "Une erreur est survenue, réessayez dans quelques minutes"
+            );
+          }
         } else {
           setIsSubmitting(false);
           setErrMsg("Une erreur est survenue, réessayez dans quelques minutes");
