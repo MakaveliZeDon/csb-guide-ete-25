@@ -38,7 +38,9 @@ import {
 } from "lucide-react";
 import { getCaptchaToken } from "@/lib/google/captcha";
 import { formAction } from "./action";
-
+import Image from "next/image";
+import logo from "../public/images/Logo_sans_fond.png";
+import cover from "../public/images/ebook-cover.jpg";
 export default function Page() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -124,6 +126,14 @@ export default function Page() {
             {/* Left Content */}
             <Fade direction="left" cascade>
               <div className="space-y-8">
+                <div className="w-[100px] md:-mt-16 h-[100px] rounded-full bg-white p-2 relative">
+                  <Image
+                    src={logo}
+                    fill
+                    className="object-contain w-full h-full"
+                    alt="Logo CSB Klinik"
+                  />
+                </div>
                 <div className="space-y-4">
                   <Badge className="bg-gradient-to-r from-pink-500 to-rose-500 text-white hover:from-pink-600 hover:to-rose-600">
                     <Sparkles className="h-4 w-4 mr-2" />
@@ -208,7 +218,15 @@ export default function Page() {
                   <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-rose-400 rounded-2xl blur-xl opacity-30"></div>
                   <div className="relative bg-white rounded-2xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
                     <div className="aspect-[3/4] bg-gradient-to-br from-orange-100 to-pink-200 rounded-lg flex items-center justify-center">
-                      <BookOpen className="h-20 w-20 text-pink-500" />
+                      <div className="w-full h-full relative z-10 rounded-xl overflow-hidden">
+                        <Image
+                          src={cover}
+                          alt="Cover Guide l'été spécial cystite"
+                          fill
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      {/* <BookOpen className="h-20 w-20 text-pink-500" /> */}
                     </div>
                     <div className="mt-4 text-center">
                       <h3 className="font-bold text-gray-900">
