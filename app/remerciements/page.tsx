@@ -34,6 +34,7 @@ import { AnimatedCard } from "@/components/AnimatedCard";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import logo from "../../public/images/Logo_sans_fond.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MerciPage() {
   const [timeLeft, setTimeLeft] = useState(15 * 60); // 15 minutes en secondes
@@ -204,9 +205,12 @@ export default function MerciPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-yellow-400 text-yellow-900 rounded-full px-6 py-2 inline-block font-bold">
+              <Link
+                href="https://cystite.csb-klinik.lu/"
+                className="bg-yellow-400 text-yellow-900 rounded-full px-6 py-2 inline-block font-bold"
+              >
                 ÉCONOMISEZ 80% - 20€ DE RÉDUCTION !
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -481,14 +485,14 @@ export default function MerciPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button
-                  size="lg"
-                  className="bg-yellow-400 hover:bg-yellow-500 text-yellow-900 px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300"
+                <Link
+                  href="https://cystite.csb-klinik.lu/"
+                  className="bg-yellow-400 hover:bg-yellow-500 text-yellow-900 px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300  rounded-md w-fit flex mx-auto"
                 >
                   <Sparkles className="h-6 w-6 mr-3" />
                   OUI, JE VEUX MON DIAGNOSTIC PERSONNALISÉ
                   <ArrowRight className="h-6 w-6 ml-3" />
-                </Button>
+                </Link>
               </motion.div>
 
               <div className="flex items-center justify-center space-x-6 text-sm opacity-90">
@@ -520,10 +524,12 @@ export default function MerciPage() {
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-4">
             <div className="bg-white rounded-lg p-3">
-              <img
-                src="/images/csb-logo.svg"
+              <Image
+                src={logo}
                 alt="CSB Klinik"
                 className="h-12 w-auto"
+                width={100}
+                height={100}
               />
             </div>
           </div>
