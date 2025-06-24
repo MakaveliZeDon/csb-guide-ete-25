@@ -52,7 +52,7 @@ export async function POST(req: Request) {
     if (createRes.ok) {
       // Return success response to client
       return NextResponse.json(
-        { message: "Contact créé avec succès dans Brevo.", data: createJson },
+        { message: "Contact créé avec succès dans Brevo." },
         { status: 200 }
       );
     }
@@ -79,7 +79,7 @@ export async function POST(req: Request) {
         return NextResponse.json(
           {
             message: "Contact mis à jour avec succès dans Brevo.",
-            data: updateJson,
+            // data: updateJson,
           },
           { status: 200 }
         );
@@ -88,7 +88,7 @@ export async function POST(req: Request) {
       // Update failed
       console.error("❌ Échec mise à jour Brevo:", updateJson);
       return NextResponse.json(
-        { error: "Échec mise à jour du contact.", details: updateJson },
+        { error: "Échec mise à jour du contact."},
         { status: updateRes.status }
       );
     }
@@ -96,7 +96,7 @@ export async function POST(req: Request) {
     // Other creation errors
     console.error("❌ Échec création Brevo:", createJson);
     return NextResponse.json(
-      { error: "Échec création du contact.", details: createJson },
+      { error: "Échec création du contact."},
       { status: createRes.status }
     );
   } catch (err) {

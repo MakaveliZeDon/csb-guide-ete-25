@@ -46,7 +46,7 @@ export async function POST(req: Request) {
       );
     } else {
       return NextResponse.json(
-        { message: "Erreur envoie email", details: sendmailJson },
+        { message: "Erreur envoie email" },
         { status: 400 }
       );
     }
