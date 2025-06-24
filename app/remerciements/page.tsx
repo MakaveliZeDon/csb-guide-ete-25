@@ -533,6 +533,25 @@ export default function MerciPage() {
             © 2025 CSB Klinik - Tous droits réservés • Conseils rédigés par des
             professionnels de santé qualifiés
           </p>
+          <p>
+            Ce site est protégé par reCAPTCHA et la
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener"
+            >
+              Politique de confidentialité
+            </a>{" "}
+            ainsi que les{" "}
+            <a
+              href="https://policies.google.com/terms"
+              target="_blank"
+              rel="noopener"
+            >
+              Conditions d’utilisation
+            </a>
+            de Google s’appliquent.
+          </p>
         </div>
       </footer>
     </div>

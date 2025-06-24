@@ -33,6 +33,13 @@ export default function RootLayout({
 
       <body className={inter.className}>
         <Script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="0d2daf33-4d3e-4d09-8c4d-9f0ab69369bb"
+          data-blockingmode="auto"
+          strategy="beforeInteractive"
+        />
+        <Script
           strategy="beforeInteractive"
           src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_V3_SITE_KEY}`}
         />

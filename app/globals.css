@@ -61,3 +61,6 @@
 html {
   scroll-behavior: smooth;
 }
+.grecaptcha-badge {
+  visibility: hidden;
+}
