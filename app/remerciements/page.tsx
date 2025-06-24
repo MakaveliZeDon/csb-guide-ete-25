@@ -133,10 +133,6 @@ export default function MerciPage() {
                 <Mail className="h-5 w-5" />
                 <span className="font-medium">Email envoyé avec succès</span>
               </div>
-              <div className="flex items-center space-x-2 text-blue-600">
-                <Download className="h-5 w-5" />
-                <span className="font-medium">Téléchargement immédiat</span>
-              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -487,7 +483,7 @@ export default function MerciPage() {
               >
                 <Link
                   href="https://cystite.csb-klinik.lu/"
-                  className="bg-yellow-400 hover:bg-yellow-500 text-yellow-900 px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300  rounded-md w-fit flex mx-auto"
+                  className="bg-yellow-400  rounded-md flex w-fit mx-auto hover:bg-yellow-500 text-yellow-900 px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300"
                 >
                   <Sparkles className="h-6 w-6 mr-3" />
                   OUI, JE VEUX MON DIAGNOSTIC PERSONNALISÉ
