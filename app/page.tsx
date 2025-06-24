@@ -41,6 +41,7 @@ import { formAction } from "./action";
 import Image from "next/image";
 import logo from "../public/images/Logo_sans_fond.png";
 import cover from "../public/images/ebook-cover.jpg";
+import { useRouter } from "next/navigation";
 export default function Page() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -48,6 +49,7 @@ export default function Page() {
     newsletter: true,
     rgpd: false,
   });
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errMsg, setErrMsg] = useState<string | null>("");
@@ -94,6 +96,7 @@ export default function Page() {
             setIsSubmitted(true);
             setIsSubmitting(false);
             setErrMsg("");
+            router.push("/remerciements");
           } else {
             setIsSubmitting(false);
             setErrMsg(
@@ -147,7 +150,7 @@ export default function Page() {
                 <div className="space-y-4">
                   <Badge className="bg-gradient-to-r from-pink-500 to-rose-500 text-white hover:from-pink-600 hover:to-rose-600">
                     <Sparkles className="h-4 w-4 mr-2" />
-                    Guide Gratuit - Été 2024
+                    Guide Gratuit - Été 2025
                   </Badge>
 
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
