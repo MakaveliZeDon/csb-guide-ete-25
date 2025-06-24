@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { GoogleTagManager } from "@next/third-parties/google";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +30,14 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <GoogleTagManager gtmId="GTM-5W83X9F" />
-      <body className={inter.className}>{children}</body>
+
+      <body className={inter.className}>
+        <Script
+          strategy="beforeInteractive"
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_V3_SITE_KEY}`}
+        />
+        {children}
+      </body>
     </html>
   );
 }

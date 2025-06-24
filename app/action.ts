@@ -3,13 +3,16 @@
 import { verifyCaptchaToken } from "@/lib/google/captcha";
 
 export async function formAction(token: string | null) {
+  console.log("delenchement:", token);
   if (!token) {
+    console.log("pas de token");
     return {
       success: false,
       message: "Token introuvable",
     };
   }
   const captchaData = await verifyCaptchaToken(token);
+  console.log("coucou2", captchaData);
 
   if (!captchaData) {
     return {
